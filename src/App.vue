@@ -3,7 +3,7 @@
   <h1>emihle reaction time timer</h1>
   <button @click="start" :disabled="isPlaying">play</button>
   <Block v-if="isPlaying" :delay="delay"  @done="endGame"/>
-  <p v-if="showResults">Reaction Time : {{score}} ms </p>
+  <Results v-if="showResults" :score="score"/>
 </template>
 
 <script>
@@ -13,7 +13,7 @@ export default {
   name: 'App',
   components: {
     Block,
-    Results,
+    Results
   },
   data() {
     return{
